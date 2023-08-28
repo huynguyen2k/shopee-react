@@ -1,0 +1,26 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-rational-order",
+    "stylelint-prettier/recommended"
+  ],
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "declaration-empty-line-before": null,
+    "declaration-no-important": true,
+    "declaration-block-no-duplicate-properties": true,
+    "max-nesting-depth": [
+      2,
+      {
+        "ignore": ["blockless-at-rules", "pseudo-classes"]
+      }
+    ],
+    "plugin/rational-order": [
+      true,
+      {
+        "border-in-box-model": true,
+        "empty-line-between-groups": true
+      }
+    ]
+  }
+}

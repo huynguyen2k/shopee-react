@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "formulahendry.auto-rename-tag",
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "pkief.material-icon-theme",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint"
+  ]
+}
