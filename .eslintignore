@@ -1,0 +1,5 @@
+dist
+.eslintrc.cjs
+vite.config.ts
+cypress.config.ts
+cypress
