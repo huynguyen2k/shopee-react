@@ -1,22 +1,15 @@
-body {
-  button {
-    background-color: red;
-  }
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.test {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  margin: 0 0 1.25em;
-  border: 1px solid #000;
-  border-radius: 4px;
+html {
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
+  line-height: 1;
+}
 
-  text-align: center;
-
-  background: linear-gradient(to bottom, #fff, #000);
-  background-color: #fff;
-  opacity: 1;
-
-  transition: 0.5s ease;
+ol,
+ul {
+  list-style: none;
 }
