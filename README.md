@@ -39,6 +39,7 @@ yarn start
 - Setup app icon (done)
 - Setup app router (in progress)
 - Setup scss base structure
+- Autoprefixer for sass
 
 #### 2. Planning
 

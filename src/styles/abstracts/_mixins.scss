@@ -1,6 +1,11 @@
-@mixin reset-list {
-  margin: 0;
-  padding: 0;
+@use 'breakpoints' as *;
 
-  list-style: none;
+@mixin media-screen($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: #{map-get($breakpoints, $breakpoint) - 0.02px}) {
+      @content;
+    }
+  } @else {
+    @error "Unfortunately, no value could be retrieved from `#{$breakpoint}`. Please make sure it is defined in `$breakpoints` map.";
+  }
 }
