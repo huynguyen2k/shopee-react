@@ -1,9 +1,9 @@
-import classes from './styles.module.scss'
+import className from './styles.module.scss'
 
 export function NotFound() {
   return (
-    <div className={classes['not-found']}>
-      <div className={classes.content}>Opps! This page is not found</div>
+    <div className={className['not-found']}>
+      <div className={className.content}>Opps! This page is not found</div>
     </div>
   )
 }
