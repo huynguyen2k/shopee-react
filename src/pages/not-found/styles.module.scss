@@ -1,0 +1,17 @@
+.not-found {
+  color: $primary-color;
+}
+
+.content {
+  font-size: $text-lg;
+}
+
+@include media-screen(sm) {
+  .not-found {
+    color: red;
+  }
+
+  .content {
+    font-size: $text-xl;
+  }
+}

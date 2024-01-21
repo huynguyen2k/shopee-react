@@ -36,9 +36,10 @@ yarn start
 
 - Setup source map (hold)
 - Setup font family (done)
-- Setup app icon (inprogress)
-- Setup app router
+- Setup app icon (done)
+- Setup app router (in progress)
 - Setup scss base structure
+- Autoprefixer for sass
 
 #### 2. Planning
 
