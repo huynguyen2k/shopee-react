@@ -48,3 +48,5 @@ yarn start
 - Write unit test, integration test, e2e test
 - Write story book
 - Setup CI/CD
+- Check bundle size with index file export
+- Optimize performance for the project

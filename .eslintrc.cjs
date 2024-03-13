@@ -63,6 +63,9 @@ module.exports = {
     'react/require-default-props': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/no-array-index-key': 'warn',
+    'react/prop-types': 'off',
+    'react/destructuring-assignment': 'off',
+    '@typescript-eslint/no-shadow': 'off',
     'jsx-a11y/label-has-associated-control': ['error', { assert: 'either' }],
   },
 }

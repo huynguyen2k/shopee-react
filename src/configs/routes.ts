@@ -15,5 +15,4 @@ export const URLS = {
   REGISTER: () => '/register' as const,
   PRODUCT_LIST: () => '/product-list' as const,
   PRODUCT_DETAIL: (productId: number) => `/product-list/${productId}` as const,
-  NOT_FOUND: () => '*' as const,
 } as const

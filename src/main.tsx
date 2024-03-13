@@ -7,7 +7,7 @@ import 'sanitize.css/forms.css'
 import 'sanitize.css/typography.css'
 
 // global styles
-import { Loading } from '@/components/common/loading'
+import { Loading } from '@/components/loading'
 import { router } from '@/configs/router'
 import '@/styles/main.scss'
 

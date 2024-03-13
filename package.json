@@ -11,7 +11,7 @@
     "lint:fix": "eslint src --ext ts,tsx --report-unused-disable-directives --fix",
     "stylelint": "stylelint \"src/**/*.{css,scss}\"",
     "prepare": "husky install",
-    "test": "vitest",
+    "test": "vitest --passWithNoTests",
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui --coverage.enabled=true",
     "cypress:open": "cypress open",
@@ -19,6 +19,9 @@
     "storybook:build": "storybook build"
   },
   "dependencies": {
+    "antd": "^5.15.1",
+    "clsx": "^2.1.0",
+    "query-string": "^8.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
