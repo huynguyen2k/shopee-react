@@ -1,0 +1,77 @@
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  li + li {
+    margin-left: 8px;
+  }
+}
+
+.pagination-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 32px;
+  height: 32px;
+  padding: 0 6px;
+  border: none;
+  border-radius: 4px;
+
+  color: $black;
+  font-weight: $font-normal;
+  font-size: $text-sm;
+  line-height: $line-height-normal;
+  text-align: center;
+  vertical-align: middle;
+
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+
+  user-select: none;
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &.ellipsis {
+    @include hoverable {
+      color: $black;
+
+      background-color: transparent;
+      cursor: default;
+    }
+  }
+
+  @include hoverable {
+    background-color: rgba($black, 0.1);
+
+    transition:
+      color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &:focus-visible {
+    background-color: rgba($black, 0.1);
+
+    transition: none;
+  }
+
+  &.selected {
+    color: $white;
+
+    background-color: $black;
+
+    transition: none;
+  }
+
+  &.disabled {
+    cursor: default;
+    opacity: 0.75;
+
+    pointer-events: none;
+  }
+}

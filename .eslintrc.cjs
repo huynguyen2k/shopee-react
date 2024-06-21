@@ -60,6 +60,7 @@ module.exports = {
       },
     ],
     'no-plusplus': 'off',
+    'consistent-return': 'off',
     'react/require-default-props': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/no-array-index-key': 'warn',
@@ -68,4 +69,10 @@ module.exports = {
     '@typescript-eslint/no-shadow': 'off',
     'jsx-a11y/label-has-associated-control': ['error', { assert: 'either' }],
   },
+  overrides: [
+    {
+      files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+      extends: ['plugin:testing-library/react'],
+    },
+  ],
 }
