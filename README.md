@@ -29,24 +29,3 @@ yarn
 ```bash
 yarn start
 ```
-
----
-
-#### 1. Todo list
-
-- Setup source map (hold)
-- Setup font family (done)
-- Setup app icon (done)
-- Setup app router (in progress)
-- Setup scss base structure
-- Autoprefixer for sass
-
-#### 2. Planning
-
-- Setup multiple languages (EN, KR, VI)
-- Adding theme (dark mode / light mode)
-- Write unit test, integration test, e2e test
-- Write story book
-- Setup CI/CD
-- Check bundle size with index file export
-- Optimize performance for the project
