@@ -1,0 +1,53 @@
+.draggable-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 16px;
+
+  background-color: #555;
+}
+
+.draggable-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 300px;
+  padding: 16px;
+  border-radius: 4px;
+
+  color: black;
+
+  background-color: white;
+
+  button {
+    width: 20px;
+    height: 20px;
+    border: none;
+
+    background-color: green;
+    outline: none;
+    cursor: grab;
+
+    user-select: none;
+    touch-action: none;
+
+    &:focus-visible {
+      outline: 2px solid orangered;
+    }
+  }
+}
+
+.droppable-container {
+  width: 332px;
+  height: 100px;
+
+  background-color: orange;
+
+  & + & {
+    margin-top: 16px;
+  }
+}
+
+body {
+  height: 200vh;
+}

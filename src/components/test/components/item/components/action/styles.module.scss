@@ -1,0 +1,54 @@
+$focused-outline-color: #4c9ffe;
+
+.Action {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+
+  background-color: transparent;
+  outline: none;
+  cursor: var(--cursor, pointer);
+
+  appearance: none;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--action-background, rgb(0 0 0 / 5%));
+
+      svg {
+        fill: #6f7b88;
+      }
+    }
+  }
+
+  svg {
+    flex: 0 0 auto;
+    height: 100%;
+    margin: auto;
+    overflow: visible;
+
+    fill: #919eab;
+  }
+
+  &:active {
+    background-color: var(--background, rgb(0 0 0 / 5%));
+
+    svg {
+      fill: var(--fill, #788491);
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 2px rgb(255 255 255 / 0%),
+      0 0 0 2px $focused-outline-color;
+  }
+}
