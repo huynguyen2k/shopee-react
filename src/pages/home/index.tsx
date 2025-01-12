@@ -1,26 +1,11 @@
-import { useState } from 'react'
-
-import { Pagination } from '@/components/pagination'
+import { BlogList } from '@/features/auth/components/blog-list'
+import { blogData } from '@/features/auth/mocks/data'
 
 export function Home() {
-  const [page, setPage] = useState(1)
-
   return (
-    <div style={{ margin: '32px' }}>
-      <Pagination
-        page={page}
-        onChange={newPage => {
-          setPage(newPage)
-        }}
-        totalPages={15}
-        showFirstButton
-        showPreviousButton
-        showNextButton
-        showLastButton
-        disabled={false}
-        boundaryCount={1}
-        siblingCount={1}
-      />
+    <div style={{ padding: '32px' }}>
+      <h1 style={{ marginBottom: '32px' }}>Home</h1>
+      <BlogList data={blogData} />
     </div>
   )
 }
