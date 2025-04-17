@@ -18,5 +18,6 @@ export default defineConfig(() => ({
         additionalData: `@use "./src/styles/abstracts" as *;`,
       },
     },
+    devSourcemap: true,
   },
 }))
