@@ -1,0 +1,20 @@
+.sortable-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 16px;
+
+  background-color: green;
+}
+
+.sortable-item {
+  width: 200px;
+  padding: 16px;
+  border: 1px solid orangered;
+  border-radius: 4px;
+
+  background-color: #333;
+  cursor: grab;
+
+  user-select: none;
+}
