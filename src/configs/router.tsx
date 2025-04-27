@@ -1,6 +1,7 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter } from 'react-router'
 
 import App from '@/app'
+import { Loading } from '@/components/loading'
 import { ROUTES } from '@/configs/routes'
 import { Home } from '@/pages/home'
 import { Login } from '@/pages/login'
@@ -13,6 +14,7 @@ export const router = createBrowserRouter([
   {
     path: ROUTES.HOME,
     element: <App />,
+    hydrateFallbackElement: <Loading />,
     errorElement: <div>Opps! Some error has occured!</div>,
     children: [
       {

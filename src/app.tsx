@@ -1,5 +1,5 @@
 import { HelmetProvider } from 'react-helmet-async'
-import { Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router'
 
 import { ResponsiveProvider } from '@/components/responsive'
 

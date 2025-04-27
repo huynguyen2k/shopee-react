@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { Navigate, useLocation } from 'react-router-dom'
+import { Navigate, useLocation } from 'react-router'
 
 import { Permission } from '../../configs/permissions'
 import { PolicyKey, PolicyResource } from '../../configs/policies'
