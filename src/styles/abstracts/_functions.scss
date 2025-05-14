@@ -1,9 +1,9 @@
-@function sum($numbers...) {
-  $sum: 0;
+@use 'sass:math';
 
-  @each $number in $numbers {
-    $sum: $sum + $number;
-  }
-
-  @return $sum;
+/// Converts a pixel value to rem units.
+/// @param $pixel    The pixel value to convert (e.g. 24px).
+/// @param $base  The root font-size in pixels (default: 16px).
+/// @return       The equivalent rem value.
+@function rem($pixel, $base: 16px) {
+  @return math.div($pixel, $base) * 1rem;
 }

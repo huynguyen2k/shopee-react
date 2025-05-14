@@ -1,25 +1,25 @@
 .blog-list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: rem(16px);
 }
 
 .blog-item {
-  padding: 16px;
+  padding: rem(16px);
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: rem(4px);
 }
 
 .blog-info {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: rem(8px);
 }
 
 .action-btns {
   display: flex;
-  gap: 16px;
-  margin-top: 8px;
+  gap: rem(16px);
+  margin-top: rem(8px);
 }
 
 .add-btn-container {
@@ -33,14 +33,14 @@
 
   display: inline-block;
 
-  padding: 8px 16px;
+  padding: rem(8px) rem(16px);
   border: none;
-  border-radius: 4px;
+  border-radius: rem(4px);
 
   outline: none;
 
   &.add-btn {
-    margin-bottom: 16px;
+    margin-bottom: rem(16px);
     color: white;
     background-color: forestgreen;
   }

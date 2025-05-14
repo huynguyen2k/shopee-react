@@ -2,7 +2,7 @@
 
 @mixin media-screen($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
-    @media (max-width: #{map-get($breakpoints, $breakpoint) - 0.02px}) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
       @content;
     }
     /* stylelint-disable-next-line at-rule-empty-line-before */
@@ -11,7 +11,7 @@
   }
 }
 
-@mixin hoverable {
+@mixin hover-able {
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       @content;

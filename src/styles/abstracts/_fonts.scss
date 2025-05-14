@@ -1,3 +1,5 @@
+@use './functions' as *;
+
 // font weight
 $font-light: 300;
 $font-normal: 400;
@@ -5,15 +7,15 @@ $font-medium: 500;
 $font-bold: 700;
 
 // font size
-$text-xs: 0.75rem; // 12px
-$text-sm: 0.875rem; // 14px
-$text-base: 1rem; // 16px
-$text-lg: 1.125rem; // 18px
-$text-xl: 1.25rem; // 20px
-$text-2xl: 1.5rem; // 24px
-$text-3xl: 1.875rem; // 30px
-$text-4xl: 2.25rem; // 36px
-$text-5xl: 3rem; // 48px
+$text-xs: rem(12px);
+$text-sm: rem(14px);
+$text-base: rem(16px);
+$text-lg: rem(18px);
+$text-xl: rem(20px);
+$text-2xl: rem(24px);
+$text-3xl: rem(30px);
+$text-4xl: rem(36px);
+$text-5xl: rem(48px);
 
 // font style
 $style-italic: italic;
