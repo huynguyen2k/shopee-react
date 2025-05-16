@@ -1,7 +1,13 @@
 import { ReactNode } from 'react'
 
 // Define all breakpoints use in the application
-export type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
+export type Breakpoint =
+  | 'mobile'
+  | 'tablet'
+  | 'laptop'
+  | 'desktop'
+  | 'wideScreen'
+  | 'fullhd'
 
 export type ScreenSizeMap = Record<Breakpoint, number>
 

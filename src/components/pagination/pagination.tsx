@@ -6,9 +6,9 @@ import LastPageIcon from '@/assets/icons/last-page.svg?react'
 import NextIcon from '@/assets/icons/next.svg?react'
 import PreviousIcon from '@/assets/icons/previous.svg?react'
 
-import { usePagination } from './pagination.hook'
+import { usePagination } from './hooks'
 import classes from './pagination.module.scss'
-import { PaginationItemType, PaginationProps } from './pagination.type'
+import { PaginationItemType, PaginationProps } from './types'
 
 export const Pagination = forwardRef<ElementRef<'nav'>, PaginationProps>(
   (

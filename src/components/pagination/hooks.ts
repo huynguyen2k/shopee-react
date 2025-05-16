@@ -1,9 +1,9 @@
-import { getAriaLabel, getRangeArray } from './pagination.helper'
 import {
   PaginationItem,
   PaginationItemType,
   UsePaginationParams,
-} from './pagination.type'
+} from './types'
+import { getAriaLabel, getRangeArray } from './utils'
 
 export function usePagination({
   page,

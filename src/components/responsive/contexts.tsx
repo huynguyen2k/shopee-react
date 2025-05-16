@@ -1,16 +1,18 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import { createContext, useEffect, useMemo, useState } from 'react'
 
-import { defaultBreakpoints } from './responsive.config'
-import { getResponsiveMap, initScreenMap } from './responsive.helper'
+import { defaultBreakpoints } from './configs'
 import {
   Breakpoint,
   MatchHandlers,
   ResponsiveContextValue,
   ResponsiveProviderProps,
   ScreenMap,
-} from './responsive.type'
+} from './types'
+import { getResponsiveMap, initScreenMap } from './utils'
 
-const ResponsiveContext = createContext<ResponsiveContextValue | null>(null)
+export const ResponsiveContext = createContext<ResponsiveContextValue | null>(
+  null,
+)
 
 export function ResponsiveProvider({
   value,
@@ -58,14 +60,4 @@ export function ResponsiveProvider({
       {children}
     </ResponsiveContext.Provider>
   )
-}
-
-export function useResponsive() {
-  const context = useContext(ResponsiveContext)
-
-  if (!context) {
-    throw new Error('useResponsive must be used within a ResponsiveProvider')
-  }
-
-  return context
 }

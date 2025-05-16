@@ -1,4 +1,4 @@
-import { MediaQueryMap, ScreenMap, ScreenSizeMap } from './responsive.type'
+import { MediaQueryMap, ScreenMap, ScreenSizeMap } from './types'
 
 export function getResponsiveMap(breakpoints: ScreenSizeMap) {
   return Object.entries(breakpoints).reduce(
