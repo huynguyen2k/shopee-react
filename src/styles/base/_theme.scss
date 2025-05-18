@@ -1,0 +1,13 @@
+@use '../abstracts/colors' as *;
+
+:root {
+  &.light-theme {
+    --text-color: #{$black};
+    --background-color: #{$white};
+  }
+
+  &.dark-theme {
+    --text-color: #{$white};
+    --background-color: #{$black};
+  }
+}
