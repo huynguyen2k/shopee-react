@@ -1,13 +1,13 @@
-import {
-  PaginationItem,
-  PaginationItemType,
-  UsePaginationParams,
-} from './types'
+import { useControlledValue } from '@/hooks/use-controlled-value'
+
+import { PaginationItem, PaginationItemType, UsePaginationProps } from './types'
 import { getAriaLabel, getRangeArray } from './utils'
 
 export function usePagination({
-  page,
-  totalPages,
+  componentName = 'usePagination',
+  page: pageProp,
+  defaultPage = 1,
+  totalPages = 1,
   onChange,
   boundaryCount = 1,
   siblingCount = 1,
@@ -16,7 +16,19 @@ export function usePagination({
   showNextButton = true,
   showFirstButton = false,
   showLastButton = false,
-}: UsePaginationParams): PaginationItem[] {
+}: UsePaginationProps): PaginationItem[] {
+  const [page, setPage] = useControlledValue({
+    value: pageProp,
+    defaultValue: defaultPage,
+    name: componentName,
+    state: 'page',
+  })
+
+  const handleClick = (newPage: number) => {
+    setPage(newPage)
+    onChange?.(newPage)
+  }
+
   const startPages = getRangeArray(1, Math.min(boundaryCount, totalPages))
 
   const endPages = getRangeArray(
@@ -103,7 +115,8 @@ export function usePagination({
         (item.indexOf('ellipsis') === -1 &&
           (item === 'next' || item === 'last' ? page >= totalPages : page <= 1))
 
-    const onClick = pageValue === null ? undefined : () => onChange?.(pageValue)
+    const onClick =
+      pageValue === null ? undefined : () => handleClick(pageValue)
 
     return {
       onClick,
