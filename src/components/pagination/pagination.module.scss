@@ -2,53 +2,52 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
 
   li + li {
-    margin-left: 8px;
+    margin-left: rem(8px);
   }
 }
 
 .pagination-item {
+  cursor: pointer;
+  user-select: none;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
-  min-width: 32px;
-  height: 32px;
-  padding: 0 6px;
+  min-width: rem(32px);
+  height: rem(32px);
+  padding: 0 rem(6px);
   border: none;
-  border-radius: 4px;
+  border-radius: rem(4px);
 
-  color: $black;
-  font-weight: $font-normal;
   font-size: $text-sm;
+  font-weight: $font-normal;
   line-height: $line-height-normal;
+  color: $black;
   text-align: center;
   vertical-align: middle;
 
   background-color: transparent;
   outline: none;
-  cursor: pointer;
-
-  user-select: none;
 
   .icon {
-    width: 20px;
-    height: 20px;
+    width: rem(20px);
+    height: rem(20px);
   }
 
   &.ellipsis {
-    @include hoverable {
-      color: $black;
-
-      background-color: transparent;
+    @include hover-able {
       cursor: default;
+      color: $black;
+      background-color: transparent;
     }
   }
 
-  @include hoverable {
+  @include hover-able {
     background-color: rgba($black, 0.1);
-
     transition:
       color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
       background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -56,22 +55,18 @@
 
   &:focus-visible {
     background-color: rgba($black, 0.1);
-
     transition: none;
   }
 
   &.selected {
     color: $white;
-
     background-color: $black;
-
     transition: none;
   }
 
   &.disabled {
+    pointer-events: none;
     cursor: default;
     opacity: 0.75;
-
-    pointer-events: none;
   }
 }

@@ -10,6 +10,7 @@
     "lint": "tsc && eslint src --ext ts,tsx --report-unused-disable-directives",
     "lint:fix": "eslint src --ext ts,tsx --report-unused-disable-directives --fix",
     "stylelint": "stylelint \"src/**/*.{css,scss}\"",
+    "stylelint:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
     "prepare": "husky install",
     "test": "vitest --passWithNoTests",
     "test:coverage": "vitest run --coverage",
@@ -19,15 +20,13 @@
     "storybook:build": "storybook build"
   },
   "dependencies": {
-    "antd": "^5.15.1",
-    "axios": "^1.7.2",
+    "axios": "^1.9.0",
     "clsx": "^2.1.0",
-    "query-string": "^8.1.0",
+    "query-string": "^9.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.5",
-    "react-router-dom": "^6.21.2",
-    "sanitize.css": "^13.0.0",
+    "react-router": "^7.6.0",
     "yup": "^1.4.0"
   },
   "devDependencies": {
@@ -73,7 +72,7 @@
     "sass": "^1.69.7",
     "storybook": "7.6.7",
     "stylelint": "^16.1.0",
-    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-clean-order": "^7.0.0",
     "stylelint-config-standard-scss": "^13.0.0",
     "stylelint-order": "^6.0.4",
     "stylelint-prettier": "^5.0.0",

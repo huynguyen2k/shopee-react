@@ -1,4 +1,4 @@
-import { PaginationItemType } from './pagination.type'
+import { PaginationItemType } from './types'
 
 export function getRangeArray(start: number, end: number) {
   const length = end - start + 1

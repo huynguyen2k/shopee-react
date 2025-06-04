@@ -78,6 +78,7 @@ function useMergePropByScreen(
 
 export const Row = forwardRef<HTMLDivElement, RowProps>(
   (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     { justify, align, className, style, children, gutter, wrap, ...other },
     ref,
   ) => {

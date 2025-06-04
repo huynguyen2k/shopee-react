@@ -1,4 +1,4 @@
+export * from './hooks'
 export * from './pagination'
-export * from './pagination.helper'
-export * from './pagination.hook'
-export * from './pagination.type'
+export * from './types'
+export * from './utils'

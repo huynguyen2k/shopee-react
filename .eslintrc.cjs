@@ -67,6 +67,19 @@ module.exports = {
     'react/prop-types': 'off',
     'react/destructuring-assignment': 'off',
     '@typescript-eslint/no-shadow': 'off',
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        args: 'all',
+        argsIgnorePattern: '^_',
+        caughtErrors: 'all',
+        caughtErrorsIgnorePattern: '^_',
+        destructuredArrayIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+        ignoreRestSiblings: false,
+      },
+    ],
     'jsx-a11y/label-has-associated-control': ['error', { assert: 'either' }],
   },
   overrides: [

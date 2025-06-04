@@ -2,9 +2,11 @@ import { AriaAttributes, ComponentPropsWithoutRef } from 'react'
 
 import { OverrideProps } from '@/types/common'
 
-export interface UsePaginationParams {
-  page: number
-  totalPages: number
+export interface UsePaginationProps {
+  componentName?: string
+  page?: number
+  defaultPage?: number
+  totalPages?: number
   onChange?: (page: number) => void
   boundaryCount?: number
   siblingCount?: number
@@ -36,5 +38,5 @@ export interface PaginationItem {
 
 export type PaginationProps = OverrideProps<
   ComponentPropsWithoutRef<'nav'>,
-  UsePaginationParams
+  UsePaginationProps
 >

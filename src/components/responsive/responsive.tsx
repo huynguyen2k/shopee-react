@@ -1,8 +1,8 @@
 import { ReactNode } from 'react'
 
-import { responsiveArray } from './responsive.config'
-import { useResponsive } from './responsive.context'
-import { Breakpoint } from './responsive.type'
+import { responsiveArray } from './configs'
+import { useResponsive } from './hooks'
+import { Breakpoint } from './types'
 
 type ResponsiveProps = Partial<Record<Breakpoint, ReactNode>>
 

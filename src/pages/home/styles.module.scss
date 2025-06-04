@@ -1,7 +1,8 @@
 .home {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100vh;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.title {
+  font-size: $text-2xl;
 }

@@ -1,0 +1,51 @@
+.comment-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: rem(16px);
+}
+
+.comment-item {
+  padding: rem(16px);
+  border: 1px solid #ccc;
+  border-radius: rem(4px);
+}
+
+.action-btns {
+  display: flex;
+  gap: rem(16px);
+  margin-top: rem(8px);
+}
+
+.add-btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  cursor: pointer;
+  user-select: none;
+
+  display: inline-block;
+
+  padding: rem(8px) rem(16px);
+  border: none;
+  border-radius: rem(4px);
+
+  outline: none;
+
+  &.add-btn {
+    margin-bottom: rem(16px);
+    color: white;
+    background-color: forestgreen;
+  }
+
+  &.update-btn {
+    color: white;
+    background-color: dodgerblue;
+  }
+
+  &.delete-btn {
+    color: white;
+    background-color: tomato;
+  }
+}

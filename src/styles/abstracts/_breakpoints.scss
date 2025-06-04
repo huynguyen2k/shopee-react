@@ -1,7 +1,9 @@
+@use './functions' as *;
+
 $breakpoints: (
-  xs: 576px,
-  sm: 768px,
-  md: 992px,
-  lg: 1200px,
-  xl: 1400px,
+  tablet: rem(768px),
+  laptop: rem(992px),
+  desktop: rem(1280px),
+  wide-screen: rem(1440px),
+  fullhd: rem(1920px),
 );

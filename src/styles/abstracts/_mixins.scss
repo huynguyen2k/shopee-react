@@ -2,15 +2,16 @@
 
 @mixin media-screen($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
-    @media (max-width: #{map-get($breakpoints, $breakpoint) - 0.02px}) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
       @content;
     }
+    /* stylelint-disable-next-line at-rule-empty-line-before */
   } @else {
     @error "Unfortunately, no value could be retrieved from `#{$breakpoint}`. Please make sure it is defined in `$breakpoints` map.";
   }
 }
 
-@mixin hoverable {
+@mixin hover-able {
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       @content;
@@ -20,20 +21,20 @@
 
 @mixin flex-center {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 @mixin inline-flex-center {
   display: inline-flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 @mixin line-clamp($line) {
-  display: -webkit-box;
-  line-clamp: $line;
-  -webkit-line-clamp: $line;
-  -webkit-box-orient: vertical;
   overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  line-clamp: $line;
 }

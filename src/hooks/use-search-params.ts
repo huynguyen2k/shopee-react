@@ -1,12 +1,12 @@
 import queryString from 'query-string'
 import { useCallback, useEffect, useMemo, useRef } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router'
 import { AnyObject, InferType, ObjectSchema } from 'yup'
 
 /**
  * `useSearchParams` is a custom hook for managing search parameters based on a schema.
  * It uses the `yup` library for type casting and the `query-string` library for parsing and stringifying the search parameters.
- * It also uses the `useLocation` and `useNavigate` hooks from `react-router-dom` for getting the current location and navigating to a new one.
+ * It also uses the `useLocation` and `useNavigate` hooks from `react-router` for getting the current location and navigating to a new one.
  *
  * @template T - A yup `ObjectSchema` that describes the shape of the search parameters.
  *
