@@ -18,7 +18,52 @@ module.exports = {
     sourceType: 'module',
     project: true,
   },
-  plugins: ['react-refresh'],
+  plugins: ['import', 'react-refresh', 'boundaries'],
+  settings: {
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+        project: './tsconfig.json',
+      },
+    },
+    'boundaries/include': ['src/**/*'],
+    'boundaries/ignore': ['src/stories/**/*', 'src/**/*.d.ts'],
+    'boundaries/elements': [
+      {
+        type: 'globalStyle',
+        mode: 'full',
+        pattern: ['src/styles/main.scss'],
+      },
+      {
+        type: 'shared',
+        mode: 'full',
+        pattern: [
+          'src/assets/**/*',
+          'src/components/**/*',
+          'src/configs/**/*',
+          'src/hooks/**/*',
+          'src/types/**/*',
+        ],
+      },
+      {
+        type: 'feature',
+        mode: 'full',
+        pattern: ['src/features/*/**/*'],
+        capture: ['featureName'],
+      },
+      {
+        type: 'page',
+        mode: 'full',
+        pattern: ['src/pages/*/**/*'],
+        capture: ['pageName'],
+      },
+      {
+        type: 'app',
+        mode: 'full',
+        pattern: ['src/app/**/*'],
+      },
+    ],
+  },
   rules: {
     'prettier/prettier': [
       'error',
@@ -81,6 +126,41 @@ module.exports = {
       },
     ],
     'jsx-a11y/label-has-associated-control': ['error', { assert: 'either' }],
+    'boundaries/no-unknown': ['error'],
+    'boundaries/no-unknown-files': ['error'],
+    'boundaries/element-types': [
+      'error',
+      {
+        default: 'disallow',
+        message:
+          '${file.type} is not allowed to import from ${dependency.type}',
+        rules: [
+          {
+            from: ['shared'],
+            allow: ['shared'],
+          },
+          {
+            from: ['feature'],
+            allow: [
+              'shared',
+              ['feature', { featureName: '${from.featureName}' }],
+            ],
+          },
+          {
+            from: ['page'],
+            allow: [
+              'shared',
+              'feature',
+              ['page', { pageName: '${from.pageName}' }],
+            ],
+          },
+          {
+            from: ['app'],
+            allow: ['shared', 'globalStyle', 'feature', 'page', 'app'],
+          },
+        ],
+      },
+    ],
   },
   overrides: [
     {
