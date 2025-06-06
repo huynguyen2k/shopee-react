@@ -4,11 +4,11 @@ import { defaultBreakpoints } from './configs'
 import {
   Breakpoint,
   MatchHandlers,
+  MediaQueryMap,
   ResponsiveContextValue,
   ResponsiveProviderProps,
   ScreenMap,
 } from './types'
-import { getResponsiveMap, initScreenMap } from './utils'
 
 export const ResponsiveContext = createContext<ResponsiveContextValue | null>(
   null,
@@ -20,15 +20,29 @@ export function ResponsiveProvider({
 }: ResponsiveProviderProps) {
   const defaultScreenSize = value ?? defaultBreakpoints
 
-  const [screens, setScreens] = useState<ScreenMap>(() =>
-    initScreenMap(defaultScreenSize),
-  )
-
-  const responsiveMap = useMemo(
-    () => getResponsiveMap(defaultScreenSize),
+  const responsiveMap = useMemo(() => {
+    return Object.entries(defaultScreenSize).reduce(
+      (result, [key, value]) => ({
+        ...result,
+        [key]: `(min-width: ${value}px)`,
+      }),
+      {} as MediaQueryMap,
+    )
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [JSON.stringify(defaultScreenSize)],
-  )
+  }, [JSON.stringify(defaultScreenSize)])
+
+  const [screens, setScreens] = useState<ScreenMap>(() => {
+    return Object.entries(responsiveMap).reduce(
+      (result, [curScreen, mediaQuery]) => {
+        const mql = window.matchMedia(mediaQuery)
+        return {
+          ...result,
+          [curScreen]: mql.matches,
+        }
+      },
+      {} as ScreenMap,
+    )
+  })
 
   useEffect(() => {
     const matchHandlers = {} as MatchHandlers
@@ -44,7 +58,6 @@ export function ResponsiveProvider({
         mql,
         handler,
       }
-      handler(mql)
     })
 
     return () => {

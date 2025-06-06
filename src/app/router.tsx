@@ -9,7 +9,7 @@ import { ProductDetail } from '@/pages/product-detail'
 import { ProductList } from '@/pages/product-list'
 import { Register } from '@/pages/register'
 
-import App from './app'
+import { App } from './app'
 
 export const router = createBrowserRouter([
   {

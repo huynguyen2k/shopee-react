@@ -2,7 +2,7 @@ import { useContext } from 'react'
 
 import { responsiveArray } from './configs'
 import { ResponsiveContext } from './contexts'
-import { Breakpoint } from './types'
+import { ResponsiveProps } from './types'
 
 export function useResponsive() {
   const context = useContext(ResponsiveContext)
@@ -14,7 +14,7 @@ export function useResponsive() {
   return context
 }
 
-export function useResponsiveProps<T>(props: Partial<Record<Breakpoint, T>>) {
+export function useResponsiveProps<T>(props: ResponsiveProps<T>) {
   const screens = useResponsive()
   const curScreen = responsiveArray.find(
     curScreen => screens[curScreen] && props[curScreen] !== undefined,

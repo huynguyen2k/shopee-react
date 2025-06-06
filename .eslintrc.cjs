@@ -27,7 +27,6 @@ module.exports = {
       },
     },
     'boundaries/include': ['src/**/*'],
-    'boundaries/ignore': ['src/stories/**/*', 'src/**/*.d.ts'],
     'boundaries/elements': [
       {
         type: 'globalStyle',
@@ -76,6 +75,7 @@ module.exports = {
       { allowConstantExport: true },
     ],
     'import/prefer-default-export': 'off',
+    'import/no-default-export': 'error',
     'import/extensions': 'off',
     'import/order': [
       'error',

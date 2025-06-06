@@ -3,7 +3,7 @@ import { Outlet } from 'react-router'
 
 import { ResponsiveProvider } from '@/components/responsive'
 
-function App() {
+export function App() {
   return (
     <HelmetProvider>
       <ResponsiveProvider>
@@ -12,5 +12,3 @@ function App() {
     </HelmetProvider>
   )
 }
-
-export default App
