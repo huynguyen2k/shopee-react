@@ -15,6 +15,10 @@ export type MediaQueryMap = Record<Breakpoint, string>
 
 export type ScreenMap = Record<Breakpoint, boolean>
 
+export type ResponsiveProps<T> = {
+  [key in Breakpoint]?: T
+}
+
 export type MatchHandlers = Record<
   Breakpoint,
   | {

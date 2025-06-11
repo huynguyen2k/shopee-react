@@ -1,27 +1,29 @@
-import { Link } from 'react-router'
-
-import { Pagination } from '@/components/pagination'
-import { BlogList } from '@/features/auth/components/blog-list'
-import { blogData } from '@/features/auth/mocks/data'
-import { useTheme } from '@/hooks/use-theme'
+import { Row } from '@/components/grid/row'
 
 import classes from './styles.module.scss'
 
 export function Home() {
-  const [theme, toggleTheme] = useTheme()
-
   return (
     <div className={classes.home}>
       <h1 className={classes.title}>Home</h1>
-      <button type="button" onClick={toggleTheme}>
-        {theme === 'light-theme'
-          ? 'Switch to Dark Theme'
-          : 'Switch to Light Theme'}
-      </button>
-      <Link to="/login">Login</Link>
+      <Row wrap="wrap" direction="row" gap={0} align="stretch" justify="start">
+        <div style={{ width: '50%' }}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi culpa
+          debitis delectus architecto, odit aliquam, voluptatem sint molestiae
+          omnis nihil dignissimos maxime nemo obcaecati impedit accusantium
+          veniam porro cupiditate? Tenetur.
+        </div>
+        <div style={{ width: '50%' }}>Col 2</div>
+        <div style={{ width: '50%' }}>Col 3</div>
+        <div style={{ width: '50%' }}>Col 4</div>
+      </Row>
 
-      <BlogList data={blogData} />
-      <Pagination page={1} totalPages={10} />
+      <Row>
+        <div style={{ width: '50%' }}>Col 1</div>
+        <div style={{ width: '50%' }}>Col 2</div>
+        <div style={{ width: '50%' }}>Col 3</div>
+        <div style={{ width: '50%' }}>Col 4</div>
+      </Row>
     </div>
   )
 }
