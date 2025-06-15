@@ -1,0 +1,16 @@
+.button {
+  cursor: pointer;
+  user-select: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  vertical-align: middle;
+
+  appearance: none;
+  outline: 0;
+
+  -webkit-tap-highlight-color: transparent;
+}
